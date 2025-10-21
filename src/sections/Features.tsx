@@ -3,6 +3,7 @@ import FeatureCard from "@/components/FeatureCard";
 import avatar1 from "@/assets/images/avatar-ashwin-santiago.jpg";
 import avatar2 from "@/assets/images/avatar-lula-meyers.jpg";
 import avatar3 from "@/assets/images/avatar-florence-shaw.jpg";
+import avatar4 from "@/assets/images/avatar-owen-garcia.jpg";
 import Image from "next/image";
 import Avatar from "@/components/Avatar";
 import Key from "@/components/Key";
@@ -34,6 +35,7 @@ export default function Features() {
                     <FeatureCard
                         title="Real-time Collaboration"
                         description="Work together seamlessly with conflict-free editing"
+                        className="group"
                     >
                         <div className="flex items-center justify-center">
                             <Avatar className="z-40">
@@ -57,8 +59,13 @@ export default function Features() {
                                     className="rounded-full"
                                 />
                             </Avatar>
-                            <Avatar className="-ml-6 border-transparent">
-                                <div className="w-full h-full bg-neutral-700 rounded-full inline-flex items-center justify-center gap-1">
+                            <Avatar className="-ml-6 border-transparent group-hover:border-green-500 transition">
+                                <div className="w-full h-full bg-neutral-700 rounded-full inline-flex items-center justify-center gap-1 relative">
+                                    <Image
+                                        src={avatar4}
+                                        alt="Avatar 4"
+                                        className="absolute size-full rounded-full opacity-0 group-hover:opacity-100 transition"
+                                    />
                                     {Array.from({ length: 3 }).map((_, i) => (
                                         <span
                                             key={i}
@@ -73,12 +80,21 @@ export default function Features() {
                     <FeatureCard
                         title="Interactive Prototyping"
                         description="Engage your client with prototypes that react to user actions."
+                        className="group"
                     >
                         <div className="aspect-video flex items-center justify-center">
-                            <p className="text-4xl font-extrabold text-white/20 text-center leading-snug">
+                            <p className="text-4xl font-extrabold text-white/20 group-hover:text-white/10 transition duration-500 text-center leading-snug">
                                 We have achieved{" "}
-                                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                                    incredible
+                                <span className="bg-gradient-to-r from-purple-400 to-pink-400 relative bg-clip-text text-transparent">
+                                    <span>incredible</span>
+                                    <video
+                                        src={"/assets/gif-incredible.mp4"}
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
+                                        className="absolute bottom-full left-1/2 -translate-x-1/2 transition duration-500 rounded-2xl shadow-xl opacity-0 pointer-events-none group-hover:opacity-100"
+                                    ></video>
                                 </span>{" "}
                                 growth this year
                             </p>
@@ -88,11 +104,18 @@ export default function Features() {
                     <FeatureCard
                         title="Keyboard Quick Actions"
                         description="Powerful commands to help you create designs more quickly"
+                        className="group"
                     >
                         <div className="aspect-video flex items-center justify-center gap-4">
-                            <Key className="w-28">shift</Key>
-                            <Key>alt</Key>
-                            <Key>C</Key>
+                            <Key className="w-28 outline outline-2 outline-offset-4 outline-transparent group-hover:outline-lime-400 transition-all duration-500 group-hover:translate-y-1 ">
+                                shift
+                            </Key>
+                            <Key className="outline outline-2 outline-offset-4 outline-transparent group-hover:outline-lime-400 transition-all duration-500 group-hover:translate-y-1 delay-150">
+                                alt
+                            </Key>
+                            <Key className="outline outline-2 outline-offset-4 outline-transparent group-hover:outline-lime-400 transition-all duration-500 group-hover:translate-y-1 delay-300">
+                                C
+                            </Key>
                         </div>
                     </FeatureCard>
                 </div>
@@ -101,9 +124,9 @@ export default function Features() {
                     {features.map((feature) => (
                         <div
                             key={feature}
-                            className="bg-neutral-900 border border-white/10 inline-flex px-3 py-1.5 rounded-2xl gap-3 items-center md:px-5 md:py-2"
+                            className="bg-neutral-900 border border-white/10 inline-flex px-3 py-1.5 rounded-2xl gap-3 items-center md:px-5 md:py-2 hover:scale-105 transition duration-500 group"
                         >
-                            <span className="bg-lime-400 text-neutral-950 w-5 h-5 rounded-full inline-flex items-center justify-center text-sm">
+                            <span className="bg-lime-400 text-neutral-950 w-5 h-5 rounded-full inline-flex items-center justify-center text-sm group-hover:rotate-45 transition duration-500">
                                 &#10038;
                             </span>
                             <span className="font-medium md:text-lg">
