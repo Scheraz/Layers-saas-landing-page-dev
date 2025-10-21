@@ -1,4 +1,3 @@
-import { footer, section } from "framer-motion/client";
 import logoImage from "@/assets/images/logo.svg";
 import Image from "next/image";
 
@@ -20,6 +19,7 @@ export default function Footer() {
                         <nav className="flex gap-6">
                             {footerLinks.map((link) => (
                                 <a
+                                    key={link.label}
                                     href={link.href}
                                     className="text-white/50 text-sm"
                                 >
