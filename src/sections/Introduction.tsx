@@ -1,7 +1,7 @@
 "use client";
 import Tag from "@/components/Tag";
 import { useRef, useState, useEffect } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useScroll, useTransform } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 
 const text = `You're racing to create exceptional work, but traditional design tools slow you down with unnecessary complexity and steep learning curves.`;
