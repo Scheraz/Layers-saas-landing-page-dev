@@ -49,6 +49,7 @@ export default function Hero() {
                 { duration: 0.5 },
             ],
         ]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
